@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-include "./view/template.php";
+include_once "./controller/UserController.php";
 
 $action = $_GET["action"] ?? "";
 
@@ -9,6 +9,13 @@ switch($action) {
         
         break;
     
+    case "signUp":
+        UserContr::registerUser();
+        break;
+
+    case "signIn":
+
+        break;
 }
 
 ?>

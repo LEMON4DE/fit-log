@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     color: salmon;
@@ -19,7 +20,7 @@ nav {
     width: 100%;
 }
 
-nav ul{
+nav ul {
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
@@ -33,9 +34,10 @@ nav ul li {
     text-align: center;
 }
 
-/* Sign In */
+/* Sign In & Sign Up */
 
-#sign-in-container {
+#sign-in-container,
+#sign-up-container {
     border: 1px solid black;
     width: 400px;
     margin: 0 auto;
@@ -43,7 +45,12 @@ nav ul li {
     padding: 20px;
 }
 
-.username-container, .password-container {
+.username-container,
+.password-container,
+.confirm-password-container,
+.first-name-container,
+.last-name-container,
+.birthday-container {
     margin: 0 auto;
     width: 230px;
     display: flex;
@@ -51,7 +58,8 @@ nav ul li {
     margin-bottom: 10px;
 }
 
-#sign-in-form button {
+#sign-in-form button,
+#sign-up-form button {
     margin-top: 10px;
     margin-bottom: 15px;
 }

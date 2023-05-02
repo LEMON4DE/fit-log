@@ -7,7 +7,7 @@ ob_start();
     <h1>SIGN IN</h1>
     <form id="sign-in-form" method="POST" action="">
         <div class="username-container" >
-            <label for="username">Username: </label>
+            <label for="username">Email: </label>
             <input type="text" name="username" placeholder="Enter username" />
         </div>
         <div class="password-container">
