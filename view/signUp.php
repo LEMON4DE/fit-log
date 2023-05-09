@@ -31,7 +31,7 @@ ob_start();
             <label for="confirm-password">Password: </label>
             <input type="password" name="confirm-password" placeholder="Confirm password" />
         </div> -->
-        <button type="submit" name="submit">Sign Up</button>
+        <button type="submit" name="sign-up">Sign Up</button>
     </form>
 </div>
 
