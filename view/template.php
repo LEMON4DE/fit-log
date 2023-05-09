@@ -10,6 +10,8 @@
 <body>
     <?php include "./view/header.php"; ?>
     <?= $html ?>
-    Hello world!
+    <?php if(session_status() == PHP_SESSION_DISABLED) {
+                echo "Hi! Session destroyed!";
+            } ?>
 </body>
 </html>
