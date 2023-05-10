@@ -4,18 +4,23 @@ ob_start();
 ?>
 
 <div id="log-in-container">
-    <h1>LOG IN</h1>
+    <h2>FIT LOG</h2>
     <form id="log-in-form" method="POST" action="">
-        <div class="username-container" >
-            <label for="email">Email: </label>
-            <input type="text" name="email" placeholder="Enter username" />
+        <div class="email-container">
+            <label for="email">
+                <input id="email" class="email-input" type="text" name="email" placeholder="Email" />
+            </label>
         </div>
         <div class="password-container">
-            <label for="password">Password: </label>
-            <input type="password" name="password" placeholder="Enter password" />
+            <label for="password">
+                <input id="password" class="password-input" type="password" name="password" placeholder="Password" />
+            </label>
         </div>
-        <button type="submit" name="log-in">Sign In</button>
+        <button class="log-in-button" type="submit" name="log-in">Log In</button>
     </form>
+</div>
+<div id="sign-up-container">
+    <p>Don't have an account? <a href="<?= SIGN_UP ?>">Sign up</a></p>
 </div>
 
 <?php

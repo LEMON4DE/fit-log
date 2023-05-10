@@ -19,7 +19,7 @@ body {
 
 #header-main:first-of-type {
     position: relative;
-    
+
 }
 
 nav {
@@ -44,18 +44,63 @@ li a {
     color: inherit;
 }
 
-/* Sign In & Sign Up */
+/* Log In & Sign Up */
+
+.log-in-button,
+.sign-up-button {
+    padding: 1px 2px 1px 5px;
+    border-radius: 10px;
+    border: 2px solid salmon;
+    color: white;
+    background-color: salmon;
+}
+
+.email-input,
+.password-input,
+.first-name-input,
+.last-name-input {
+    padding-left: 5px;
+}
+
+.birthday-input {
+    padding: 1px 2px 1px 5px;
+}
+
+.email-input,
+.password-input,
+.first-name-input,
+.last-name-input,
+.birthday-input,
+.log-in-button,
+.sign-up-button {
+    width: 220px;
+    height: 30px;
+    box-sizing: content-box;
+}
 
 #log-in-container,
 #sign-up-container {
-    border: 1px solid black;
+    border: 1px solid lightgray;
     width: 400px;
     margin: 0 auto;
     text-align: center;
     padding: 20px;
+    margin-top: 10px;
+    font-size: 17px;
 }
 
-.username-container,
+#sign-up-container {
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+#sign-up-container a,
+#log-in-container a {
+    text-decoration: none;
+    color: black;
+}
+
+.email-container,
 .password-container,
 .confirm-password-container,
 .first-name-container,
@@ -63,8 +108,10 @@ li a {
 .birthday-container {
     margin: 0 auto;
     width: 230px;
+    height: 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 10px;
 }
 
