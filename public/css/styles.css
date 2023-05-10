@@ -31,7 +31,6 @@ nav ul {
     justify-content: space-evenly;
     list-style-type: none;
     padding: 0;
-    /* margin-bottom: 0; */
 }
 
 nav ul li {
@@ -40,9 +39,14 @@ nav ul li {
     text-align: center;
 }
 
+li a {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* Sign In & Sign Up */
 
-#sign-in-container,
+#log-in-container,
 #sign-up-container {
     border: 1px solid black;
     width: 400px;
@@ -64,7 +68,7 @@ nav ul li {
     margin-bottom: 10px;
 }
 
-#sign-in-form button,
+#log-in-form button,
 #sign-up-form button {
     margin-top: 10px;
     margin-bottom: 15px;

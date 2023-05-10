@@ -1,11 +1,11 @@
 <?php
-$title = "SIGN IN";
+$title = "LOG IN";
 ob_start();
 ?>
 
-<div id="sign-in-container">
-    <h1>SIGN IN</h1>
-    <form id="sign-in-form" method="POST" action="">
+<div id="log-in-container">
+    <h1>LOG IN</h1>
+    <form id="log-in-form" method="POST" action="">
         <div class="username-container" >
             <label for="email">Email: </label>
             <input type="text" name="email" placeholder="Enter username" />
@@ -14,7 +14,7 @@ ob_start();
             <label for="password">Password: </label>
             <input type="password" name="password" placeholder="Enter password" />
         </div>
-        <button type="submit" name="sign-in">Sign In</button>
+        <button type="submit" name="log-in">Sign In</button>
     </form>
 </div>
 

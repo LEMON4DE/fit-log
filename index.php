@@ -10,16 +10,19 @@ include_once "./controller/HomeController.php";
 $action = $_GET["action"] ?? "home";
 
 switch($action) {    
+    case "home":
+        HomeContr::home();
+
     case "signUp":
         UserContr::registerUser();
         break;
 
-    case "signIn":
-        UserContr::signInUser();
-        break;
+    // case "logIn":
+    //     UserContr::logInUser();
+    //     break;
 
     default:
-        HomeContr::home();
+        UserContr::logInUser();
         break;
 }
 
