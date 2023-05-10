@@ -4,16 +4,16 @@ if(!isset($_SESSION['user'])){
     $_SESSION['user'] = false;
 }
 
-include_once "./controller/UserController.php";
-include_once "./controller/HomeController.php";
+include_once './controller/UserController.php';
+include_once './controller/HomeController.php';
 
-$action = $_GET["action"] ?? "home";
+$action = $_GET['action'] ?? '';
 
 switch($action) {    
-    case "home":
+    case 'home':
         HomeContr::home();
 
-    case "signUp":
+    case 'signUp':
         UserContr::registerUser();
         break;
 
