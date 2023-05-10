@@ -22,9 +22,9 @@ $_GET["action"] = $_GET["action"] ?? "";
     </div>
     <nav>
         <ul>
-            <li>About</li>
-            <li>Workout Log</li>
-            <li>Workout History</li>
+            <li><a href="">About</a></li>
+            <li><a href="">Workout Log</a></li>
+            <li><a href="">Workout History</a></li>
         </ul>
     </nav>
 </header>

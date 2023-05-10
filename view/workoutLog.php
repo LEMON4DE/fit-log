@@ -1,9 +1,9 @@
 <?php
-$title = "EXERCISE LOG";
+$title = "WORKOUT LOG";
 
 ?>
 
-<div id="exercise-log">
+<div id="workout-log">
     <form method="POST" >
         <label for="date">Date</label>
         <input name="date" type="date" />

@@ -14,12 +14,12 @@ class UserContr extends Users {
         include_once "./view/signUp.php";
     }
 
-    public static function signInUser() {
+    public static function logInUser() {
         if(isset($_SESSION['user']) && $_SESSION['user'] !== false) {
             header('location: ' . HOME);
         }
 
-        if(isset($_POST['sign-in']) && isset($_POST['email']) !== '' && isset($_POST['password']) !== '') {
+        if(isset($_POST['log-in']) && isset($_POST['email']) !== '' && isset($_POST['password']) !== '') {
             $user = new Users();
             $validated_user = $user->getUser($_POST);
 
@@ -33,7 +33,7 @@ class UserContr extends Users {
             }
         }
 
-        include_once "./view/signIn.php";
+        include_once "./view/logIn.php";
     }
 
     

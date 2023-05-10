@@ -1,5 +1,5 @@
 <?php
-$title = "SIGN IN";
+$title = "LOG IN";
 ob_start();
 ?>
 
