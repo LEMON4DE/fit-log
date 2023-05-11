@@ -9,7 +9,7 @@ $_GET["action"] = $_GET["action"] ?? "";
         <span id="header-logo">FIT LOG</span>
     <?php if(isset($_SESSION['user']) && $_SESSION['user'] !== false) { ?>
         <div id="profile-container">
-            <span>Hi, <?= $_SESSION['user'][2] ?></span>
+            <div id="profile-image-container"><span>N</span></div> <!-- Get the first letter from the user's first name and display -->
             <form method="POST" action="">
                 <button type="submit" name="sign-out">Sign out</button>
             </form>
