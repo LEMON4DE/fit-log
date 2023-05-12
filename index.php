@@ -6,6 +6,7 @@ if(!isset($_SESSION['user'])){
 
 include_once './controller/UserController.php';
 include_once './controller/HomeController.php';
+include_once './controller/AboutController.php';
 
 $action = $_GET['action'] ?? '';
 
@@ -17,9 +18,9 @@ switch($action) {
         UserContr::registerUser();
         break;
 
-    // case "logIn":
-    //     UserContr::logInUser();
-    //     break;
+    case "about":
+        AboutContr::about();
+        break;
 
     default:
         UserContr::logInUser();
