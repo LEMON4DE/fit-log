@@ -7,6 +7,7 @@ if(!isset($_SESSION['user'])){
 include_once './controller/UserController.php';
 include_once './controller/HomeController.php';
 include_once './controller/AboutController.php';
+include_once './controller/workoutLogController.php';
 
 $action = $_GET['action'] ?? '';
 
@@ -20,6 +21,10 @@ switch($action) {
 
     case "about":
         AboutContr::about();
+        break;
+
+    case "workoutLog":
+        WorkoutLogContr::logWorkout();
         break;
 
     default:

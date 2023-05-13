@@ -9,7 +9,7 @@ $_GET["action"] = $_GET["action"] ?? "";
         <span id="header-logo">FIT LOG</span>
     <?php if(isset($_SESSION['user']) && $_SESSION['user'] !== false) { ?>
         <div id="profile-container">
-            <div id="profile-image-container"><span>N</span></div> <!-- Get the first letter from the user's first name and display -->
+            <div id="profile"><span>N</span></div> <!-- Get the first letter from the user's first name and display -->
             <form method="POST" action="">
                 <button type="submit" name="sign-out">Sign out</button>
             </form>
@@ -22,8 +22,8 @@ $_GET["action"] = $_GET["action"] ?? "";
     </div>
     <nav>
         <ul>
-            <li><a href="">About</a></li>
-            <li><a href="">Workout Log</a></li>
+            <li><a href="<?= ABOUT ?>">About</a></li>
+            <li><a href="<?= WORKOUT_LOG ?>">Workout Log</a></li>
             <li><a href="">Workout History</a></li>
         </ul>
     </nav>
