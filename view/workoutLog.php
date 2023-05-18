@@ -9,56 +9,61 @@ ob_start();
             <label for="date">Date</label>
             <input name="date" type="date" />
             <label for="parent-option">Workout</label>
-            <select id="parent-option" name="parent-option">
-                <option value="">Select</option>
+            <select id="parent-option" name="workouts" onchange="toggleOptions()">
+                <option value="default">Select</option>
                 <option value="traditional-strength-training">Traditional Strength Training</option>
                 <option value="cardio">Cardio</option>
             </select>
         </div>
-        <div id="options">
-            <label for="child-option1">Muscle group</label>
-            <select id="child-option1" name="child-option1">
-                <option>Select</option>
-                <option value="chest">Chest & triceps</option>
-                <option value="back">Back & biceps</option>
+        <div id="options-container">
+            <label for="muscle-group-options">Muscle group</label>
+            <select id="muscle-group-options" name="muscle-groups" onchange="toggleOptions()">
+                <option value="default">Select</option>
+                <option value="chest">Chest</option>
+                <option value="back">Back</option>
                 <option value="legs">Legs</option>
+                <option value="arms">Arms</option>
                 <option value="shoulders">Shoulders</option>
             </select>
-            <label for="child-option2">Exercise</label>
-            <select id="child-option2" name="child-option2">
-                <option value="">Select</option>
-                <option value="bench-press">Bench press</option>
-                <option value="incline-bench-press">Incline bench press</option>
-                <option value="dips">Dips</option>
-                <option value="triceps-extension">Triceps extension</option>
-                <option value="dumbbell-shoulder-press">Dumbbell shoulder press</option>
-                <option value="dumbbell-lateral-raise">Dumbbell lateral raise</option>
-                <option value="lat-pulldown">Lat pulldown</option>
-                <option value="seated-cable-row">Seated cable row</option>
-                <option value="assist-pull-up">Assist pull up</option>
-                <option value="t-bar-row">T bar row</option>
-                <option value="deadlift">Deadlift</option>
-                <option value="barbell-squat">Barbell squat</option>
-                <option value="dumbbell-split-squat">Dumbbell split squat</option>
-                <option value="leg-extension">Leg extension</option>
-                <option value="lying-leg-curl">Lying leg curl</option>
-                <option value="hip-adduction">Hip adduction</option>
-                <option value="hip-abduction">Hip abduction</option>
+            <label for="exercise-options">Exercise</label>
+            <select id="exercise-options" name="exercise" onchange="toggleOptions()">
+                <option value="default">Select</option>
+                <option value="chest-option1">Bench press</option>
+                <option value="chest-option2">Incline bench press</option>
+                <option value="chest-option3">Dips</option>
+                <option value="chest-option4">Chest press machine</option>
+                <option value="chest-option5">Incline chest press machine</option>
+                <option value="back-option1">Lat pulldown</option>
+                <option value="back-option2">Seated cable row</option>
+                <option value="back-option3">Assist pull up</option>
+                <option value="back-option4">T bar row</option>
+                <option value="back-option5">Deadlift</option>
+                <option value="legs-option1">Barbell squat</option>
+                <option value="legs-option2">Dumbbell split squat</option>
+                <option value="legs-option3">Leg extension</option>
+                <option value="legs-option4">Lying leg curl</option>
+                <option value="legs-option5">Hip adduction</option>
+                <option value="legs-option6">Hip abduction</option>
+                <option value="arms-option1">Triceps extension</option>
+                <option value="arms-option2">Ez bar curl</option>
+                <option value="shoulders-option1">Dumbbell shoulder press</option>
+                <option value="shoulders-option2">Dumbbell lateral raise</option>
             </select>
         </div>
         <div id="sets-reps-container">
             <label>Sets</label>
-            <input name="sets" type="number" placeholder="e.g. 4" />
+            <input id="sets" name="sets" type="number" placeholder="e.g. 4" />
     
             <label>Reps</label>
-            <input name="reps" type="number" placeholder="e.g. 8" />
+            <input id="reps" name="reps" type="number" placeholder="e.g. 8" />
         </div>
+        <div id="duration-container">
+            <label for="start-time">Start time</label>
+            <input id="start-time" name="start-time" type="time" />
 
-        <!-- <label>Start</label>
-        <input name="start" type="time" />
-
-        <lable>Finish</lable>
-        <input name="finish" type="time" /> -->
+            <label for="end-time">End time</label>
+            <input id="end-time" name="end-time" type="time" />
+        </div>
         <div class="button-container">
             <button>Add</button>        
         </div>

@@ -242,8 +242,9 @@ li a {
 }
 
 #log-form #date-workout-container,
-#log-form #options,
-#log-form #sets-reps-container {
+#log-form #options-container,
+#log-form #sets-reps-container,
+#log-form #duration-container {
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: center;
