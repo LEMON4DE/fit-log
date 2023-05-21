@@ -50,3 +50,10 @@ let toggleOptions = () => {
     }
 }
 
+let addLog = () => {
+    let addButton = document.getElementById('add-button');
+
+    addButton.addEventListener('click', () => {
+        
+    })
+}

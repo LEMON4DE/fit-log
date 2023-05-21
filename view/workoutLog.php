@@ -65,7 +65,7 @@ ob_start();
             <input id="end-time" name="end-time" type="time" />
         </div>
         <div class="button-container">
-            <button>Add</button>        
+            <button id="add-button" onclick="addLog()">Add</button>        
         </div>
     </form>
     
