@@ -27,7 +27,6 @@ class Users extends DB
 
         if(password_verify($input_password, $retrieved_user['password'])) {
             return $retrieved_user;
-        }
-
+        };
     }
 }

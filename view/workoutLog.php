@@ -7,9 +7,9 @@ ob_start();
     <form id="log-form" method="POST">
         <div id="date-workout-container">
             <label for="date">Date</label>
-            <input name="date" type="date" />
-            <label for="parent-option">Workout</label>
-            <select id="parent-option" name="workouts" onchange="toggleOptions()">
+            <input id="date" name="date" type="date" />
+            <label for="workout-options">Workout</label>
+            <select id="workout-options" name="workouts">
                 <option value="default">Select</option>
                 <option value="traditional-strength-training">Traditional Strength Training</option>
                 <option value="cardio">Cardio</option>
@@ -17,7 +17,7 @@ ob_start();
         </div>
         <div id="options-container">
             <label for="muscle-group-options">Muscle group</label>
-            <select id="muscle-group-options" name="muscle-groups" onchange="toggleOptions()">
+            <select id="muscle-group-options" name="muscle-groups">
                 <option value="default">Select</option>
                 <option value="chest">Chest</option>
                 <option value="back">Back</option>
@@ -26,7 +26,7 @@ ob_start();
                 <option value="shoulders">Shoulders</option>
             </select>
             <label for="exercise-options">Exercise</label>
-            <select id="exercise-options" name="exercise" onchange="toggleOptions()">
+            <select id="exercise-options" name="exercise">
                 <option value="default">Select</option>
                 <option value="chest-option1">Bench press</option>
                 <option value="chest-option2">Incline bench press</option>
@@ -65,33 +65,24 @@ ob_start();
             <input id="end-time" name="end-time" type="time" />
         </div>
         <div class="button-container">
-            <button id="add-button" onclick="addLog()">Add</button>        
+            <button id="add-button">Add</button>        
         </div>
     </form>
     
-    <div id="record-container"> <!-- Show rows when clicking add button -->
-        <table id="record-table">
+    <div id="record-container">
+        <table>
             <thead>
                 <tr>
                     <th>Date</th>
                     <th>Wokrout</th>
                     <th>Muscle group</th>
                     <th>Exercise</th>
-                    <th>Set(s)</th>
-                    <th>Rep(s)</th>
+                    <th>Set</th>
+                    <th>Reps</th>
                     <th>Duration</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>2023. 4. 23</td>
-                    <td>Traditional Strength Training</td>
-                    <td>Shoulders</td>
-                    <td>Dumbbell shoulder press</td>
-                    <td>4</td>
-                    <td>8</td>
-                    <td>1 hour(s)</td>
-                </tr>
+            <tbody id="data-row">
                 <tr>
                     <td>2023. 4. 23</td>
                     <td>Traditional Strength Training</td>
