@@ -9,7 +9,7 @@
     <title>FIT LOG | <?= $title ?></title>
 </head>
 <body>
-    <?php if($_GET['action'] !== 'logIn' && $_GET['action'] !== 'signUp' ) {
+    <?php if(isset($_GET['action']) && $_GET['action'] !== 'signUp' && $_GET['action'] !== 'logIn') {
         include "./view/header.php";
     } ?>
     <?= $html ?>

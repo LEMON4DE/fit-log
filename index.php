@@ -14,16 +14,17 @@ $action = $_GET['action'] ?? '';
 switch($action) {    
     case 'home':
         HomeContr::home();
+        break;
 
     case 'signUp':
         UserContr::registerUser();
         break;
 
-    case "about":
+    case 'about':
         AboutContr::about();
         break;
 
-    case "workoutLog":
+    case 'workoutLog':
         WorkoutLogContr::logWorkout();
         break;
 

@@ -1,7 +1,5 @@
 <?php
 $title = "FIT LOG";
-
-$_GET["action"] = $_GET["action"] ?? "";
 ?>
 
 <header>
