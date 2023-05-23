@@ -8,6 +8,7 @@ include_once './controller/UserController.php';
 include_once './controller/HomeController.php';
 include_once './controller/AboutController.php';
 include_once './controller/workoutLogController.php';
+include_once './controller/workoutHistoryController.php';
 
 $action = $_GET['action'] ?? '';
 
@@ -25,7 +26,11 @@ switch($action) {
         break;
 
     case 'workoutLog':
-        WorkoutLogContr::logWorkout();
+        WorkoutLogContr::saveWorkoutLog();
+        break;
+
+    case 'workoutHistory':
+        WorkoutHistoryContr::showWorkoutHistory();
         break;
 
     default:

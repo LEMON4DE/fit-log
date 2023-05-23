@@ -244,6 +244,7 @@ li a {
 #log-form #date-workout-container,
 #log-form #options-container,
 #log-form #sets-reps-container,
+#log-form #weight-container,
 #log-form #duration-container {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -258,7 +259,7 @@ li a {
 }
 
 #record-container {
-    width: 70%;
+    width: 85%;
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
@@ -266,7 +267,7 @@ li a {
     border: 1px solid black;
     border-radius: 15px;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 0;
 }
 
 table {
@@ -290,6 +291,6 @@ table td {
 
 .button-container {
     margin-top: 25px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     text-align: center;
 }

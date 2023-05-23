@@ -20,7 +20,7 @@ class Users extends DB
 
         $input_email = $postData['email'];
         $input_password = $postData['password'];
-        $get_user = $db->prepare('SELECT email, password, first_name, last_name, is_deleted, admin FROM users WHERE email = :email');
+        $get_user = $db->prepare('SELECT id, email, password, first_name, last_name, is_deleted, admin FROM users WHERE email = :email');
         $get_user->bindParam(':email', $input_email);
         $get_user->execute();
         $retrieved_user = $get_user->fetch();

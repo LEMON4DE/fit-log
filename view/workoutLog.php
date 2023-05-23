@@ -4,7 +4,7 @@ ob_start();
 ?>
 
 <div id="log-form-container">
-    <form id="log-form" method="POST">
+    <div id="log-form">
         <div id="date-workout-container">
             <label for="date">Date</label>
             <input id="date" name="date" type="date" />
@@ -50,6 +50,10 @@ ob_start();
                 <option value="shoulders-option2">Dumbbell lateral raise</option>
             </select>
         </div>
+        <div id="weight-container">
+            <label>Weight</label>
+            <input id="weight" name="weight" type="number" />
+        </div>
         <div id="sets-reps-container">
             <label>Sets</label>
             <input id="sets" name="sets" type="number" placeholder="e.g. 4" />
@@ -67,36 +71,31 @@ ob_start();
         <div class="button-container">
             <button id="add-button">Add</button>        
         </div>
-    </form>
+    </div>
     
     <div id="record-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Wokrout</th>
-                    <th>Muscle group</th>
-                    <th>Exercise</th>
-                    <th>Set</th>
-                    <th>Reps</th>
-                    <th>Duration</th>
-                </tr>
-            </thead>
-            <tbody id="data-row">
-                <tr>
-                    <td>2023. 4. 23</td>
-                    <td>Traditional Strength Training</td>
-                    <td>Shoulders</td>
-                    <td>Dumbbell shoulder press</td>
-                    <td>4</td>
-                    <td>8</td>
-                    <td>1 hour(s)</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="button-container">
-        <button type="submit">Save</button>
+        <form method="POST" action=""> <!-- send the data to workout history page and show history there -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Wokrout</th>
+                        <th>Muscle group</th>
+                        <th>Exercise</th>
+                        <th>Weight (kg/lb)</th>
+                        <th>Set</th>
+                        <th>Reps</th>
+                        <th>Start time</th>
+                        <th>End time</th>
+                    </tr>
+                </thead>
+                <tbody id="data-row">
+                </tbody>
+            </table>
+            <div class="button-container">
+                <button id="save-button">Save</button>
+            </div>
+        </form>
     </div>
     <!-- Show 'saved successfully' message to the user after clicking the button without refreshing -->
 </div>
