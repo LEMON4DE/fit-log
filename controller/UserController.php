@@ -35,7 +35,4 @@ class UserContr extends Users {
 
         include_once "./view/logIn.php";
     }
-
-    
-
 }

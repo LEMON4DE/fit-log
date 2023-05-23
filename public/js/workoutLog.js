@@ -1,12 +1,16 @@
 // HTML DOM references for each option container
 let optionsContainer = document.getElementById('options-container');
+let weightContainer = document.getElementById('weight-container');
 let setsAndRepsContainer = document.getElementById('sets-reps-container');
 let durationContainer = document.getElementById('duration-container');
+let recordContainer = document.getElementById('record-container');
 
-// Default display for option containers : None
+// Default display for option & record containers : None
 optionsContainer.style.display = "none";
+weightContainer.style.display = "none";
 setsAndRepsContainer.style.display = "none";
 durationContainer.style.display = "none";
+recordContainer.style.display = "none";
 
 // HTML DOM references for each option
 let workoutOptions = document.getElementById('workout-options');
@@ -33,17 +37,20 @@ let filterOptions = (muscleGroup) => {
 // Function to change options depending on exercise selected : Traditional strength training VS Cardio
 let toggleOptions = () => {
     if(workoutOptions.value == "default") {
-        durationContainer.style.display = "none";
         optionsContainer.style.display = "none";
+        weightContainer.style.display = "none";
         setsAndRepsContainer.style.display = "none";
+        durationContainer.style.display = "none";
     }else if (workoutOptions.value == "cardio") {
-        durationContainer.style.display = "block";
         optionsContainer.style.display = "none";
+        weightContainer.style.display = "none";
         setsAndRepsContainer.style.display = "none";
+        durationContainer.style.display = "block";
     }else if (workoutOptions.value == "traditional-strength-training") {
-        durationContainer.style.display = "none";
+        weightContainer.style.display = "block";
         optionsContainer.style.display = "block";
         setsAndRepsContainer.style.display = "block";
+        durationContainer.style.display = "block";
 
         filterOptions(muscleGroupOptions.value);
     };
@@ -64,6 +71,7 @@ addButton.addEventListener('click', (e) => {
     let workoutSelected = workoutOptions.options[workoutOptions.selectedIndex].innerHTML;
     let muscleGroupSelected = muscleGroupOptions.options[muscleGroupOptions.selectedIndex].innerHTML;
     let exerciseSelected = exerciseOptions.options[exerciseOptions.selectedIndex].innerHTML;
+    let weightInput = document.getElementById('weight').value;
     let setsInput = document.getElementById('sets').value;
     let repsInput = document.getElementById('reps').value;
     let startTime = document.getElementById('start-time').value;
@@ -79,7 +87,9 @@ addButton.addEventListener('click', (e) => {
                             <td>N/A</td>
                             <td>N/A</td>
                             <td>N/A</td>
-                            <td>${endTime - startTime}</td>`;
+                            <td>N/A</td>
+                            <td>${startTime}</td>
+                            <td>${endTime}</td>`;
     
         dataRow.appendChild(newRow);
     } else if(workoutOptions.value == "traditional-strength-training") {
@@ -87,39 +97,55 @@ addButton.addEventListener('click', (e) => {
                             <td>${workoutSelected}</td>
                             <td>${muscleGroupSelected}</td>
                             <td>${exerciseSelected}</td>
+                            <td>${weightInput}</td>
                             <td>${setsInput}</td>
                             <td>${repsInput}</td>
-                            <td>N/A</td>`;     
+                            <td>${startTime}</td>
+                            <td>${endTime}</td>`;     
                             
         dataRow.appendChild(newRow);
     };
+
+    recordContainer.style.display = "block";
 });
 
 // Send an AJAX request to the server to save the data in the workout log database
-    // let formData = new FormData();
 
-    // formData.append('date', dateSelected);
-    // formData.append('workout', workoutSelected);
-    // formData.append('muscle-group', muscleGroupSelected);
-    // formData.append('exercise', exerciseSelected);
-    // formData.append('sets', setsInput);
-    // formData.append('reps', repsInput);
-    // formData.append('start-time', startTime);
-    // formData.append('end-time', endTime);
+let saveButton = document.getElementById('save-button');
 
-    // let xhr = new XMLHttpRequest();
+saveButton.addEventListener('click', (e) => {
+    e.preventDefault();
     
-    // xhr.open('POST', 'index.php?action=workoutLog');
-    // xhr.send(formData);
+    let logData = document.getElementsByTagName('td');
+    let dataObj = {
+        "date" : logData[0].textContent,
+        "workoutType" : logData[1].textContent,
+        "muscleGroup" : logData[2].textContent,
+        "exercise" : logData[3].textContent,
+        "weight" : logData[4].textContent,
+        "sets" : logData[5].textContent,
+        "reps" : logData[6].textContent,
+        "startTime" : logData[7].textContent,
+        "endTime" : logData[8].textContent
+    };
+
+    let formData = new FormData();
     
-    // xhr.addEventListener('readystatechange', () => {
-
-    //     if(xhr.readyState == XMLHttpRequest.DONE) {
-    //         if(xhr.status == 200) {
-    //             console.log("Request sent successfully!");
-
-    //             let response = xhr.response;
-                
-    //         };
-    //     };
-    // });
+    formData.append('data', JSON.stringify(dataObj));
+    
+    let xhr = new XMLHttpRequest();
+    
+    xhr.open('POST', 'index.php?action=workoutLog');
+    xhr.send(formData);
+    
+    xhr.addEventListener('readystatechange', () => {
+    
+        if(xhr.readyState == XMLHttpRequest.DONE) {
+            if(xhr.status == 200) {
+                console.log("Request sent successfully!");
+    
+                // let response = xhr.response;
+            };
+        };
+    });
+});

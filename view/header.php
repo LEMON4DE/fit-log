@@ -22,7 +22,7 @@ $title = "FIT LOG";
         <ul>
             <li><a href="<?= ABOUT ?>">About</a></li>
             <li><a href="<?= WORKOUT_LOG ?>">Workout Log</a></li>
-            <li><a href="">Workout History</a></li>
+            <li><a href="<?= WORKOUT_HISTORY ?>">Workout History</a></li>
         </ul>
     </nav>
 </header>
