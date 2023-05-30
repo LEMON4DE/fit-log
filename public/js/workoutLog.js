@@ -2,14 +2,12 @@
 let optionsContainer = document.getElementById('options-container');
 let weightContainer = document.getElementById('weight-container');
 let setsAndRepsContainer = document.getElementById('sets-reps-container');
-let durationContainer = document.getElementById('duration-container');
 let recordContainer = document.getElementById('record-container');
 
 // Default display for option & record containers : None
 optionsContainer.style.display = "none";
 weightContainer.style.display = "none";
 setsAndRepsContainer.style.display = "none";
-durationContainer.style.display = "none";
 recordContainer.style.display = "none";
 
 // HTML DOM references for each option
@@ -40,17 +38,14 @@ let toggleOptions = () => {
         optionsContainer.style.display = "none";
         weightContainer.style.display = "none";
         setsAndRepsContainer.style.display = "none";
-        durationContainer.style.display = "none";
     }else if (workoutOptions.value == "cardio") {
         optionsContainer.style.display = "none";
         weightContainer.style.display = "none";
         setsAndRepsContainer.style.display = "none";
-        durationContainer.style.display = "block";
     }else if (workoutOptions.value == "traditional-strength-training") {
         weightContainer.style.display = "block";
         optionsContainer.style.display = "block";
         setsAndRepsContainer.style.display = "block";
-        durationContainer.style.display = "block";
 
         filterOptions(muscleGroupOptions.value);
     };
@@ -74,8 +69,6 @@ addButton.addEventListener('click', (e) => {
     let weightInput = document.getElementById('weight').value;
     let setsInput = document.getElementById('sets').value;
     let repsInput = document.getElementById('reps').value;
-    let startTime = document.getElementById('start-time').value;
-    let endTime = document.getElementById('end-time').value;
 
     let dataRow = document.getElementById('data-row');
     let newRow = document.createElement('tr');
@@ -87,9 +80,7 @@ addButton.addEventListener('click', (e) => {
                             <td>N/A</td>
                             <td>N/A</td>
                             <td>N/A</td>
-                            <td>N/A</td>
-                            <td>${startTime}</td>
-                            <td>${endTime}</td>`;
+                            <td>N/A</td>`;
     
         dataRow.appendChild(newRow);
     } else if(workoutOptions.value == "traditional-strength-training") {
@@ -99,9 +90,7 @@ addButton.addEventListener('click', (e) => {
                             <td>${exerciseSelected}</td>
                             <td>${weightInput}</td>
                             <td>${setsInput}</td>
-                            <td>${repsInput}</td>
-                            <td>${startTime}</td>
-                            <td>${endTime}</td>`;     
+                            <td>${repsInput}</td>`;     
                             
         dataRow.appendChild(newRow);
     };
@@ -124,9 +113,7 @@ saveButton.addEventListener('click', (e) => {
         "exercise" : logData[3].textContent,
         "weight" : logData[4].textContent,
         "sets" : logData[5].textContent,
-        "reps" : logData[6].textContent,
-        "startTime" : logData[7].textContent,
-        "endTime" : logData[8].textContent
+        "reps" : logData[6].textContent
     };
 
     let formData = new FormData();

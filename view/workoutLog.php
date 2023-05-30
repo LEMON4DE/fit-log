@@ -61,13 +61,6 @@ ob_start();
             <label>Reps</label>
             <input id="reps" name="reps" type="number" placeholder="e.g. 8" />
         </div>
-        <div id="duration-container">
-            <label for="start-time">Start time</label>
-            <input id="start-time" name="start-time" type="time" />
-
-            <label for="end-time">End time</label>
-            <input id="end-time" name="end-time" type="time" />
-        </div>
         <div class="button-container">
             <button id="add-button">Add</button>        
         </div>
@@ -85,8 +78,6 @@ ob_start();
                         <th>Weight (kg/lb)</th>
                         <th>Set</th>
                         <th>Reps</th>
-                        <th>Start time</th>
-                        <th>End time</th>
                     </tr>
                 </thead>
                 <tbody id="data-row">

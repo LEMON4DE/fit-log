@@ -13,8 +13,6 @@ ob_start();
                 <th>Weight (kg/lb)</th>
                 <th>Set</th>
                 <th>Reps</th>
-                <th>Start time</th>
-                <th>End time</th>
             </tr>
         </thead>
         <tbody id="data-row">
@@ -27,8 +25,6 @@ ob_start();
                 <td><?= $data_row['weight']; ?></td>
                 <td><?= $data_row['sets']; ?></td>
                 <td><?= $data_row['reps']; ?></td>
-                <td><?= $data_row['start_time']; ?></td>
-                <td><?= $data_row['end_time']; ?></td>
             </tr>
             <?php }; ?>
         </tbody>

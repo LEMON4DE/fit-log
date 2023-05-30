@@ -10,8 +10,8 @@ class Workout extends DB {
             print_r($data);
             print_r($_SESSION['user']);
 
-            $save_data = $db->prepare('INSERT INTO workout_log (date, workout_type, muscle_group, exercise, weight, sets, reps, start_time, end_time, user_id) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )');
-            $save_data->execute([$data['date'], $data['workoutType'],  $data['muscleGroup'], $data['exercise'], $data['weight'], $data['sets'], $data['reps'], $data['startTime'], $data['endTime'], $_SESSION['user']['id']]);
+            $save_data = $db->prepare('INSERT INTO workout_log (date, workout_type, muscle_group, exercise, weight, sets, reps, user_id) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)');
+            $save_data->execute([$data['date'], $data['workoutType'],  $data['muscleGroup'], $data['exercise'], $data['weight'], $data['sets'], $data['reps'], $_SESSION['user']['id']]);
         }
     }
 
@@ -20,7 +20,7 @@ class Workout extends DB {
 
         $user_id = $_SESSION['user']['id'];
 
-        $get_history = $db->prepare('SELECT date, workout_type, muscle_group, exercise, weight, sets, reps, start_time, end_time FROM workout_log WHERE user_id = :user_id ');
+        $get_history = $db->prepare('SELECT date, workout_type, muscle_group, exercise, weight, sets, reps FROM workout_log WHERE user_id = :user_id ');
         $get_history->bindParam(':user_id', $user_id);
         $get_history->execute();
 
