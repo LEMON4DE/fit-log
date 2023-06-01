@@ -67,7 +67,7 @@ ob_start();
     </div>
     
     <div id="record-container">
-        <form method="POST" action=""> <!-- send the data to workout history page and show history there -->
+        <form method="POST" action="">
             <table>
                 <thead>
                     <tr>

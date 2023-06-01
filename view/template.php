@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./public/css/styles.css">
-    <script src="./public/js/workoutLog.js" defer></script>
+    <script src="./public/js/header.js" defer></script>
     <script src="./public/js/signUp.js" defer></script>
+    <script src="./public/js/workoutLog.js" defer></script>
     <title>FIT LOG | <?= $title ?></title>
 </head>
 <body>

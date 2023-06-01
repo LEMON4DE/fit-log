@@ -10,10 +10,10 @@ body {
     padding-top: 150px;
 }
 
-/* Header & Profile */
+/* Header */
 
 header {
-    background-color: rgba(211, 211, 211, 0.3); /* temporary */
+    background-color: rgba(255, 255, 255, 1);
     position: fixed;
     top: 0;
     left: 0;
@@ -69,10 +69,12 @@ li a {
     color: inherit;
 }
 
+/* Profile */
+
 #profile-container {
     display: flex;
     justify-content: end;
-    grid-column: 3 / 3; /* Simply, "grid-column: 3" would work as well */
+    margin-right: 67px;
 }
 
 #profile {
@@ -84,6 +86,33 @@ li a {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#dropdown-menu {
+    margin: 0;
+    width: 150px;
+    position: absolute;
+    right: 15px;
+    top: 70px;
+    background-color: rgba(211, 211, 211, 1);
+    padding: 5px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#dropdown-menu.open {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#dropdown-menu li {
+    list-style: none;
+    width: 150px;
+    font-size: 15px;
+    text-align: center;
+    padding-bottom: 5px;
 }
 
 /* Log In & Sign Up */
@@ -259,7 +288,7 @@ li a {
 }
 
 #record-container {
-    width: 85%;
+    width: 60%;
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
@@ -293,4 +322,18 @@ table td {
     margin-top: 25px;
     margin-bottom: 25px;
     text-align: center;
+}
+
+/* Workout History */
+
+.history-container {
+    width: 60%;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
