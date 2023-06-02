@@ -1,10 +1,11 @@
 <?php
 $title = "FIT LOG";
+$selected = "background-color: rgba(211, 211, 211, 1); font-weight: 800; color: white; border-radius: 15px;";
 ?>
 
 <header>
     <div id="header-main">
-        <span id="header-logo">FIT LOG</span>
+        <span id="header-logo" ><a href="<?= HOME ?>">FIT LOG</a></span>
     <?php if(isset($_SESSION['user']) && $_SESSION['user'] !== false) { ?>
         <div id="profile-container">
             <div id="profile"><span>N</span></div> <!-- Get the first letter from the user's first name and display -->
@@ -24,11 +25,11 @@ $title = "FIT LOG";
         header('location: ' . LOG_IN);
     }} ?>
     </div>
-    <nav>
+    <nav id="menu-bar">
         <ul>
-            <li><a href="<?= ABOUT ?>">About</a></li>
-            <li><a href="<?= WORKOUT_LOG ?>">Workout Log</a></li>
-            <li><a href="<?= WORKOUT_HISTORY ?>">Workout History</a></li>
+            <li id="about-menu" style="<?= $_GET['action'] == 'about' ? $selected : '' ?>"><a href="<?= ABOUT ?>" >About</a></li>
+            <li id="workout-log-menu" style="<?= $_GET['action'] == 'workoutLog' ? $selected : '' ?>"><a href="<?= WORKOUT_LOG ?>">Workout Log</a></li>
+            <li id="workout-history-menu" style="<?= $_GET['action'] == 'workoutHistory' ? $selected : '' ?>"><a href="<?= WORKOUT_HISTORY ?>">Workout History</a></li>
         </ul>
     </nav>
 </header>
