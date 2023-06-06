@@ -4,10 +4,11 @@ body {
     padding: 0;
     color: salmon;
     height: 100vh;
+    position: relative;
 }
 
 body {
-    padding-top: 150px;
+    padding-top: 120px;
 }
 
 /* Header */
@@ -19,6 +20,7 @@ header {
     left: 0;
     right: 0;
     margin-bottom: 10px;
+    z-index: 9999;
 }
 
 #header-main {
@@ -129,6 +131,42 @@ li a {
     border-radius: 15px;
 }
 
+/* HOME */
+
+#welcome_message_container {
+    width: 55%;
+    padding: 10px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+}
+
+#message_1,
+#message_2 {
+    font-size: 80px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#message_1 span,
+#message_2 span {
+    transform: translateX(-20px); /* Why is this not working? */
+    opacity: 0;
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+#message_1 span.loaded,
+#message_2 span.loaded {
+    transform: translateX(0); /* Why is this not working? */
+    opacity: 1;
+}
+
+#message_2 {
+    text-align: right;
+}
+
 /* Log In & Sign Up */
 
 .log-in-button,
@@ -214,6 +252,7 @@ li a {
     display: flex;
     text-align: center;
     margin: 0 auto;
+    margin-top: 30px;
 }
 
 #img-container {
@@ -256,6 +295,7 @@ li a {
     height: 100vh;
     width: 90vw;
     margin: 0 auto;
+    margin-top: 30px;
 }
 
 #log-form-container label {
